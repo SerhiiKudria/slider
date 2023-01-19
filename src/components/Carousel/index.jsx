@@ -67,6 +67,16 @@ function Carousel({ slides }) {
               {'>'}
             </button>
             <button onClick={play}>{isPaused ? 'Play' : 'Pause'}</button>
+
+            <input
+              type="number"
+              min={1}
+              max={10}
+              value={delay / 1000}
+              onChange={({ target: { value } }) =>
+                setDelay(Number(value) * 1000)
+              }
+            />
             <button className={fullScreenButtonClassName} onClick={fullScreen}>
               {isFullScreen ? 'Close FullScreen' : 'FullScreen'}
             </button>
